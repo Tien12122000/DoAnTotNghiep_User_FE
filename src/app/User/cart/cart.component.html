@@ -1,0 +1,234 @@
+<div class="container_fullwidth">
+    <div class="container shopping-cart">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="title">
+                    Giỏ hàng
+                </h3>
+                <div class="clearfix">
+                </div>
+
+                <table class="shop-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Mã
+                            </th>
+                            <th>
+                                Hình ảnh
+                            </th>
+                            <th>
+                                Chi tiết
+                            </th>
+                            <th>
+                                Số lượng
+                            </th>
+                            <th>
+                                Đơn giá
+                            </th>
+                            <th>
+                                Xóa
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        <tr id="{{item.maSanPham}}" *ngFor="let item of getlistCartItem()">
+                            <td>
+                                {{item.maSanPham}}
+                            </td>
+                            <td>
+                                <img src="assets/backend/images/img/{{item.tui.hinhAnh}}" alt="">
+                            </td>
+                            <td>
+                                <div class="shop-details">
+                                    <div class="productname">
+                                        {{item.tui.tenTuiXach}}
+                                    </div>
+                                    <p>
+                                        <img alt="" src="images/star.png">
+                                        <a class="review_num" href="#">
+                                                      02 Review(s)
+                                                  </a>
+                                    </p>
+                                    <div class="color-choser">
+                                        <span class="text">
+                                                      Màu sắc :
+                                                  </span>
+                                        <ul>
+                                            <li>
+                                                <a class="black-bg " href="#">
+                                                              Đen
+                                                          </a>
+                                            </li>
+                                            <li>
+                                                <a class="red-bg" href="#">
+                                                              Đỏ tươi
+                                                          </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p>
+                                        Mã sản phẩm :
+                                        <strong class="pcode">
+                                          {{item.maSanPham}}
+                                                  </strong>
+                                    </p>
+                                </div>
+                            </td>
+
+                            <td>
+                                <input value="{{item.soluong}}" style="width: 70px" min="0" type="number" name="" data-id="{{item.maSanPham}}">
+                            </td>
+                            <td>
+                                <h5>
+                                    <strong class="red">
+                                      {{item.dongia|number}} Đ
+                                              </strong>
+                                </h5>
+                            </td>
+                            <td>
+                                <span>
+                                    <img (click)="deleteItem(item.maSanPham)" style="cursor: pointer;" src="assets/User/images/remove.png" alt="">
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">
+                                <button class="pull-left">
+                                          Tiếp tục mua sắm
+                                      </button>
+                                <button class=" pull-right" (click)="updateCartQuanty()">
+                                          Cập nhật giỏ hàng
+                                      </button>
+                            </td>
+                        </tr>
+                    </tfoot>
+
+                </table>
+                <div class="clearfix">
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="shippingbox">
+                            <div class="subtotal">
+                            </div>
+                            <div class="grandtotal">
+                                <h5>
+                                    Tổng tiền
+                                </h5>
+                                <span>
+                                      {{total()|number}} Đ
+                                  </span>
+                            </div>
+                            <button id="checkOut">
+                                  <a [routerLink]="['/CheckOut']"></a> Tiến hành thanh toán
+                              </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+        </div>
+        <div class="our-brand">
+            <div class="control">
+                <a id="prev_brand" class="prev" href="#" style="display: block;">
+                  &lt;
+              </a>
+                <a id="next_brand" class="next" href="#" style="display: block;">
+                  &gt;
+              </a>
+            </div>
+            <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: left; position: relative; inset: auto; z-index: auto; width: 1140px; height: 97px; margin: 0px; overflow: hidden;">
+                <div class="caroufredsel_wrapper" style="display: block; text-align: left; float: none; position: absolute; inset: 0px -4560px 0px 0px; z-index: auto; width: 1140px; height: 92px; margin: 0px; overflow: hidden;">
+                    <ul id="braldLogo" style="text-align: left; float: none; position: absolute; inset: 0px auto auto 0px; margin: 0px; width: 5700px; height: 92px;">
+                        <li style="width: 1140px;">
+                            <ul class="brand_item">
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/envato.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/themeforest.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/photodune.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/activeden.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/envato.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li style="width: 1140px;">
+                            <ul class="brand_item">
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/envato.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/themeforest.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/photodune.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="assets/User/images/activeden.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="brand-logo">
+                                            <img src="http://localhost/blog/public/User/images/envato.png" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

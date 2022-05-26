@@ -1,0 +1,179 @@
+<div class="hom-slider">
+    <div class="container">
+        <div id="sequence">
+            <div class="sequence-prev"><i class="fa fa-angle-left"></i></div>
+            <div class="sequence-next"><i class="fa fa-angle-right"></i></div>
+            <ul class="sequence-canvas">
+                <li class="animate-out" style="display: list-item; z-index: 1;">
+                    <div class="flat-caption caption1 formLeft delay300 text-center"><span class="suphead">Show diễn
+                          Paris 2014</span></div>
+                    <div class="flat-caption caption2 formLeft delay400 text-center">
+                        <h1>Bô sưu tập mùa đông</h1>
+                    </div>
+                    <div class="flat-caption caption3 formLeft delay500 text-center">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    </div>
+                    <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#">More
+                          Details</a></div>
+                    <div class="flat-image formBottom delay200" data-duration="5" data-bottom="true"><img style="width: 100%;transform: scale(3,2.5);height: 80%; margin-top: 30%;" src="assets/User/images/00586babf05931076848__1_-removebg-preview.png" alt=""></div>
+                </li>
+                <li style="display: list-item; z-index: 3;" class="animate-in">
+                    <div class="flat-caption caption2 formLeft delay400">
+                        <h1>Bộ sưu tập mùa đông</h1>
+                    </div>
+                    <div class="flat-caption caption3 formLeft delay500">
+                        <h2>Etiam velit purus, luctus vitae velit sedauctor<br>egestas diam, Etiam velit purus.</h2>
+                    </div>
+                    <div class="flat-button caption5 formLeft delay600"><a class="more" href="#">More Details</a></div>
+                    <div class="flat-image formBottom delay200" data-bottom="true"><img style="width: 70%;transform: scale(3,2);height: 80%;     margin-left: -43%; margin-top: 20%; margin-right: 50%;" src="assets/User/images/8d4019b38241431f1a50-removebg-preview.png" alt=""></div>
+                </li>
+                <li style="display: list-item; z-index: 1;" class="animate-out">
+                    <div class="flat-caption caption2 formLeft delay400 text-center">
+                        <h1>Thời trang năm 2013</h1>
+                    </div>
+                    <div class="flat-caption caption3 formLeft delay500 text-center">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    </div>
+                    <div class="flat-button caption4 formLeft delay600 text-center"><a class="more" href="#">More
+                          Details</a></div>
+                    <div class="flat-image formBottom delay200" data-bottom="true"><img style="width: 100%;transform: scale(3,2.5);height: 80%; margin-top: 30%;margin-left: -43%; " src="assets/User/images/cb5aaa6ee19120cf7980-removebg-preview.png" alt=""></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="promotion-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="promo-box"><img src="images/promotion-01.png" alt=""></div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="promo-box"><img src="images/promotion-02.png" alt=""></div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="promo-box"><img src="images/promotion-03.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="col-sm-12 padding-right">
+            <div class="features_items">
+                <!--features_items-->
+                <h2 class="title text-center">Features Items</h2>
+
+                <div class="col-sm-3" *ngFor="let item of staticUrlArray">
+                    <div class="product-image-wrapper">
+                        <div class="single-products">
+                            <div class="productinfo text-center">
+                                <a id="{{item.maTuiXach}}" [routerLink]="['/detail',item.maTuiXach]"><img style="width: 249px; height:249px" src="assets/backend/images/img/{{item.hinhAnh}}" alt=""></a>
+                                <h2>{{item.gia|number}}Đ</h2>
+                                <p>{{item.tenTuiXach}}</p>
+
+                                <a (click)="addToCart(item.maTuiXach)" href="javascript:" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to
+                                      cart</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--features_items-->
+            <div class="pagination">
+                <span (click)="previous()" class="">«</span>
+                <!-- <span *ngFor="let page of listTotalHomeRecord">{{page}}</span> -->
+                <select #select style="outline: none; width: 10%; float: left; margin-left: 0px; margin-top: 1px;" value="{{staticIndex}}" (change)="change(select.value)">
+                  <option value="{{page}}" *ngFor="let page of staticRecordcount">{{page}}</option>
+                </select>
+                <span class="" (click)="next()">»</span>
+            </div>
+
+
+
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="clearfix"></div>
+        <div class="our-brand">
+            <h3 class="title"><strong>Thương hiệu </strong>của chúng tôi</h3>
+            <div class="control"><a id="prev_brand" class="prev" href="#" style="display: block;">&lt;</a><a id="next_brand" class="next" href="#" style="display: block;">&gt;</a></div>
+            <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: left; position: relative; inset: auto; z-index: auto; width: 1140px; height: 97px; margin: 0px; overflow: hidden;">
+                <ul id="braldLogo" style="text-align: left; float: none; position: absolute; inset: 0px auto auto 0px; margin: 0px; width: 5700px; height: 97px;">
+                    <li style="width: 1140px;">
+                        <ul class="brand_item">
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/envato.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/themeforest.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/photodune.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/activeden.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/envato.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="width: 1140px;">
+                        <ul class="brand_item">
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/envato.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/themeforest.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/photodune.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/activeden.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="assets/User/images/envato.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,286 @@
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="special-deal leftbar" style="margin-top:0;">
+                    <h4 class="title">
+                        Special
+                        <strong>
+                          Deals
+                      </strong>
+                    </h4>
+                    <div class="special-item">
+                        <div class="product-image">
+                            <a href="details.html">
+                                <img src="assets/backend/images/img/5mQ6B.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <p>
+                                <a href="details.html">
+                                  Licoln Corner Unit
+                              </a>
+                            </p>
+                            <h5 class="price">
+                                $300.00
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="special-item">
+                        <div class="product-image">
+                            <a href="details.html">
+                                <img src="assets/backend/images/img/W1cyz.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <p>
+                                <a href="details.html">
+                                  Licoln Corner Unit
+                              </a>
+                            </p>
+                            <h5 class="price">
+                                $300.00
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="special-item">
+                        <div class="product-image">
+                            <a href="details.html">
+                                <img src="assets/backend/images/img/ZOG7g.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <p>
+                                <a href="details.html">
+                                  Licoln Corner Unit
+                              </a>
+                            </p>
+                            <h5 class="price">
+                                $300.00
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="get-newsletter leftbar">
+                    <h3 class="title">
+                        Kết nối với
+                        <strong>
+                          Flat Shop
+                      </strong>
+                    </h3>
+
+                    <form>
+                        <input class="email" type="text" name="" placeholder="Your Email...">
+                        <input class="submit" type="submit" value="Xác nhận">
+                    </form>
+                </div>
+                <div class="fbl-box leftbar">
+                    <h3 class="title">
+                        Facebook
+                    </h3>
+                    <span class="likebutton">
+                      <a href="#">
+                          <img src="assets/User/images/fblike.png" alt="">
+                      </a>
+                  </span>
+                    <p>
+                        12 nghìn người thích Flat Shop.
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="fbplug">
+                        <a href="#">
+                            <span>
+                              <img src="assets/User/images/fbicon.png" alt="">
+                          </span> Facebook social plugin
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="checkout-page">
+                    <ol class="checkout-steps">
+                        <li class="steps active">
+                            <a href="checkout.html" class="step-title">
+                              Thông tin hóa đơn
+                          </a>
+                            <div class="step-description">
+                                <form [formGroup]="formgroup" (submit)="checkout(formgroup)">
+                                    <input type="hidden" name="_token" value="4zWSmQ9pfsq55TeQyiUIIzz0q5cIB5hLbIMw5nhI">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="your-details">
+                                                <h5>
+                                                    Thông tin chi tiết
+                                                </h5>
+                                                <div class="form-row">
+                                                    <label class="lebel-abs">
+                                                      Người mua
+                                                      <strong class="red">
+                                                          *
+                                                      </strong>
+                                                  </label>
+                                                    <input type="text" class="input namefild" value="" formControlName="HoTenKhachHang">
+                                                    <div class="alert-danger danger" *ngIf="(formgroup.controls.HoTenKhachHang?.touched)&&(formgroup.controls.HoTenKhachHang?.errors?.required)">
+                                                        Tên không được để trống
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row">
+                                                    <label class="lebel-abs">
+                                                      Email
+                                                      <strong class="red">
+                                                          *
+                                                      </strong>
+                                                  </label>
+                                                    <input value="" type="email" class="input namefild" formControlName="EmailKhachHang">
+                                                    <div class="alert-danger danger" *ngIf="(formgroup.controls.EmailKhachHang?.touched)&&(formgroup.controls.EmailKhachHang?.errors?.required)">
+                                                        Email không được để trống
+                                                    </div>
+                                                    <div class="alert-danger danger" *ngIf="(formgroup.controls.EmailKhachHang?.touched)&&(formgroup.controls.EmailKhachHang?.errors?.email)">
+                                                        Email không đúng định dạng
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="lebel-abs">
+                                                      Mật khẩu
+                                                      <strong class="red">
+                                                          *
+                                                      </strong>
+                                                  </label>
+                                                    <input value="" type="password" class="input namefild" formControlName="pass">
+                                                    <div class="alert-danger danger" *ngIf="(formgroup.controls.pass?.touched)&&(formgroup.controls.pass?.errors?.required)">
+                                                        Mật khẩu không được để trống
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="lebel-abs">
+                                                      Số điện thoại
+                                                      <strong class="red">
+                                                          *
+                                                      </strong>
+                                                  </label>
+                                                    <input value="" type="tel" class="input namefild" formControlName="SoDienThoai">
+                                                    <div class="alert-danger danger" *ngIf="(formgroup.controls.SoDienThoai?.touched)&&(formgroup.controls.SoDienThoai?.errors?.required)">
+                                                        Số điện thoại không được để trống
+                                                    </div>
+                                                    <!-- <div class="alert-danger danger" *ngIf="(formgroup.controls.SoDienThoai?.errors?.pattern)">
+                                                        Số điện thoại không đúng định dạng
+                                                    </div> -->
+
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="lebel-abs">
+                                                      Địa chỉ nhận
+                                                      <strong class="red">
+                                                          *
+                                                      </strong>
+                                                  </label>
+                                                    <input value="" type="text" class="input namefild" formControlName="DiaChiKhachHang">
+                                                    <div class="alert-danger danger" *ngIf="(formgroup.controls.DiaChiKhachHang?.touched)&&(formgroup.controls.DiaChiKhachHang?.errors?.required)">
+                                                        Địa chỉ không được để trống
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="lebel-abs">
+                                                      Ghi chú
+                                                      <strong class="red">
+                                                          *
+                                                      </strong>
+                                                  </label>
+                                                    <input value="" type="text" class="input namefild" formControlName="ghichu">
+
+                                                </div>
+
+                                                <p>
+                                                    <ng-template #enable>
+                                                        <button type="submit" [disabled]="false">
+                                                          Thanh toán
+                                                        </button>
+                                                    </ng-template>
+                                                    <ng-template #disable>
+                                                        <button type="submit" [disabled]="true">
+                                                          Thanh toán
+                                                        </button>
+                                                    </ng-template>
+                                                    <!-- <span *ngIf="((formgroup.controls.DiaChiKhachHang.value.length<=0 &&
+                                                    formgroup.controls.HoTenKhachHang.value.length<=0 &&
+                                                    formgroup.controls.EmailKhachHang.value.length<=0 &&
+                                                    formgroup.controls.pass.value.length<=0 &&
+                                                    formgroup.controls.SoDienThoai.value.length<=0)||
+                                                    ((formgroup.controls.SoDienThoai?.errors?.pattern))||
+                                                      (formgroup.controls.EmailKhachHang?.touched)&&(formgroup.controls.EmailKhachHang?.errors?.email)) then disable else enable">
+
+                                                    </span> -->
+                                                    <span *ngIf="((formgroup.controls.DiaChiKhachHang.value.length<=0 ||
+                                                    formgroup.controls.HoTenKhachHang.value.length<=0 ||
+                                                    formgroup.controls.EmailKhachHang.value.length<=0 ||
+                                                    formgroup.controls.pass.value.length<=0 ||
+                                                    formgroup.controls.SoDienThoai.value.length<=0)||
+                                                      (formgroup.controls.EmailKhachHang?.touched &&
+                                                      formgroup.controls.EmailKhachHang?.errors?.email)) then disable else enable">
+
+                                                    </span>
+                                                    <!-- <button type="submit" *ngIf="(formgroup.controls.DiaChiKhachHang); then enable else disable">
+                                                      Thanh toán
+                                                    </button> -->
+
+                                                </p>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </li>
+                    </ol>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+
+</div>

@@ -1,0 +1,132 @@
+<div class="header" style="position: fixed;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-2">
+                <div class="logo">
+                    <a href="index.html"><img style="margin-top: 16%;
+                      transform: scale(1.5);" src="assets/User/images/19053343b4b175ef2ca0-removebg-preview.png" alt="FlatShop"></a>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-10">
+                <div class="header_top" style="background: none">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul class="option_nav">
+                                <li class="dorpdown">
+                                    <a href="#">Eng</a>
+                                    <ul class="subnav">
+                                        <li><a href="#">Eng</a></li>
+                                        <li><a href="#">Vns</a></li>
+                                        <li><a href="#">Fer</a></li>
+                                        <li><a href="#">Gem</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dorpdown">
+                                    <a href="#">USD</a>
+                                    <ul class="subnav">
+                                        <li><a href="#">USD</a></li>
+                                        <li><a href="#">UKD</a></li>
+                                        <li><a href="#">FER</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="topmenu">
+                                <li><a href="#">Giới thiệu</a></li>
+                                <li><a href="#">Tin tức</a></li>
+                                <li><a href="#">Dịch vụ</a></li>
+                                <li><a href="#">Tuyển dụng</a></li>
+                                <li><a href="#">Truyền thông</a></li>
+                                <li><a href="#">Trợ giúp</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="usermenu">
+
+                                <li><a href="assets/home_login" class="log">Đăng nhập</a></li>
+                                <li><a href="assets/DonHang" class="reg">Đơn hàng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="header_bottom">
+                    <ul class="option">
+                        <li id="search" class="search">
+
+
+
+                            <form #formG='ngForm' (submit)="search(formG.value)">
+                                <input type="hidden" name="_token" value="9ZHdjhe29libr6JnJYmlsw0AEWk3WJzbXYnbTUQ6"> <input class="search-submit" type="submit" value="">
+                                <input ngModel name="Seacrh" class="search-input" placeholder="Enter your search term..." type="text" value="">
+                            </form>
+
+
+                        </li>
+                        <li class="option-cart">
+                            <a [routerLink]="['/Cart']" class="cart-icon">cart <span id="no" class="cart_no">{{getnumberOfItems()}}
+</span></a>
+                            <ul class="option-cart-item">
+                                <div id="change-item-cart">
+                                    <li *ngFor="let item of getlistCartItem()">
+                                        <div class="cart-item">
+                                            <div class="image"><img src="assets/backend/images/img/{{item.tui.hinhAnh}}" alt=""></div>
+                                            <div class="item-description">
+                                                <p class="name">{{item.tui.tenTuiXach}}</p>
+                                                <p>
+                                                </p>
+                                                <h4>{{item.dongia}} x {{item.soluong}}</h4>
+                                                <p></p>
+
+                                            </div>
+                                            <div class="right">
+                                                <p class="price">
+                                                    <a href="javascript:" (click)="deleteItem(item.tui.maTuiXach)" class="remove"><img data-id="1" src="assets/User/images/remove.png" alt="remove"></a>
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+                                <li>
+                                    <button class="checkout" [routerLink]="['/CheckOut']">CheckOut</button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle
+                              navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active dropdown">
+                                <a href="assets/Home" class="dropdown-toggle">Trang chủ</a>
+
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Danh mục sản phẩm</a>
+                                <div class="dropdown-menu mega-menu" style="width: 150px;">
+                                    <div class="row">
+                                        <div id="menu_category" class="col-md-6 col-sm-6">
+                                            <ul class="mega-menu-links">
+                                                <li style="cursor: pointer;" (click)="getTuiByCate(cate.maLoaiTuiXach)" id="{{cate.maLoaiTuiXach}}" *ngFor="let cate of category"><a>{{cate.tenLoai}}</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="productgird.html">Quà tặng</a></li>
+
+                            <li><a href="productgird.html">blog</a></li>
+
+                            <li><a href="assets/Contact">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
