@@ -63,7 +63,7 @@
         <div class="col-sm-12 padding-right">
             <div class="features_items">
                 <!--features_items-->
-                <h2 class="title text-center">Features Items</h2>
+                <h2 class="title text-center">Sản phẩm nổi bật</h2>
 
                 <div class="col-sm-3" *ngFor="let item of staticUrlArray">
                     <div class="product-image-wrapper">
@@ -73,8 +73,7 @@
                                 <h2>{{item.gia|number}}Đ</h2>
                                 <p>{{item.tenTuiXach}}</p>
 
-                                <a (click)="addToCart(item.maTuiXach)" href="javascript:" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to
-                                      cart</a>
+                                <a (click)="addToCart(item.maTuiXach)" href="javascript:" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                             </div>
 
                         </div>
@@ -99,81 +98,5 @@
         <div class="clearfix"></div>
 
         <div class="clearfix"></div>
-        <div class="our-brand">
-            <h3 class="title"><strong>Thương hiệu </strong>của chúng tôi</h3>
-            <div class="control"><a id="prev_brand" class="prev" href="#" style="display: block;">&lt;</a><a id="next_brand" class="next" href="#" style="display: block;">&gt;</a></div>
-            <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: left; position: relative; inset: auto; z-index: auto; width: 1140px; height: 97px; margin: 0px; overflow: hidden;">
-                <ul id="braldLogo" style="text-align: left; float: none; position: absolute; inset: 0px auto auto 0px; margin: 0px; width: 5700px; height: 97px;">
-                    <li style="width: 1140px;">
-                        <ul class="brand_item">
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/envato.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/themeforest.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/photodune.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/activeden.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/envato.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li style="width: 1140px;">
-                        <ul class="brand_item">
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/envato.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/themeforest.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/photodune.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/activeden.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="brand-logo"><img src="assets/User/images/envato.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
 </div>
