@@ -20,9 +20,9 @@ export class HeaderComponent extends BaseComponent implements OnInit {
       Seacrh:new FormControl('',Validators.maxLength(100))
     });
     let local_storage = JSON.parse(localStorage.getItem('cart'));
-    console.log(local_storage);
+    // console.log(local_storage);
     combineLatest([
-      this._api.get('/api/LoaiTuiXaches/danhsach/'),
+      this._api.get('/api/LoaiTuiXaches/danhsach'),
     ]).subscribe(res => {
       this.category=res[0];
       console.log(this.category);
@@ -46,7 +46,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
       HomeComponent.list=res[0];
       HomeComponent.listTotalHomeRecord=res[1];
       HomeComponent.pageHomeIndex=1;
-      console.log(HomeComponent.list_item);
+      // console.log(HomeComponent.list_item);
       setTimeout(() => {
         this.loadScripts();
       });
@@ -66,7 +66,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
       HomeComponent.list_item = res[0];
       HomeComponent.listTotalHomeRecord=res[1];
       HomeComponent.pageHomeIndex=1;
-      console.log(HomeComponent.list_item);
+      // console.log(HomeComponent.list_item);
       setTimeout(() => {
         this.loadScripts();
       });
