@@ -23,7 +23,7 @@
                         <li id="search" class="search">
                             <form #formG='ngForm' (submit)="search(formG.value)">
                                 <input type="hidden" name="_token" value="9ZHdjhe29libr6JnJYmlsw0AEWk3WJzbXYnbTUQ6"> <input class="search-submit" type="submit" value="">
-                                <input ngModel name="Seacrh" class="search-input" placeholder="Enter your search term..." type="text" value="">
+                                <input ngModel name="Seacrh" class="search-input" placeholder="Nhập tên sản phẩm cần tìm..." type="text" value="">
                             </form>
 
 
@@ -40,7 +40,7 @@
                                                 <p class="name">{{item.tui.tenTuiXach}}</p>
                                                 <p>
                                                 </p>
-                                                <h4 style="font-size: 17px;">{{item.dongia}} x {{item.soluong}}</h4>
+                                                <h4 style="font-size: 13px;">{{item.dongia|number}} VND x {{item.soluong}}</h4>
                                                 <p></p>
 
                                             </div>
@@ -54,7 +54,7 @@
                                     </li>
                                 </div>
                                 <li>
-                                    <button class="checkout" [routerLink]="['/CheckOut']">CheckOut</button>
+                                    <button class="checkout" [routerLink]="['/CheckOut']">Thanh toán</button>
                                 </li>
                             </ul>
                         </li>

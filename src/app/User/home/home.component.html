@@ -70,10 +70,10 @@
                         <div class="single-products">
                             <div class="productinfo text-center">
                                 <a id="{{item.maTuiXach}}" [routerLink]="['/detail',item.maTuiXach]"><img style="width: 249px; height:249px" src="assets/backend/images/img/{{item.hinhAnh}}" alt=""></a>
-                                <h2>{{item.gia|number}}Đ</h2>
-                                <p>{{item.tenTuiXach}}</p>
+                                <p style = "font-size: 16px;color: red;padding-top: 15px;">{{item.gia|number}} VNĐ</p>
+                                <p style ="font-size:13px">{{item.tenTuiXach}}</p>
 
-                                <a (click)="addToCart(item.maTuiXach)" href="javascript:" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
+                                <a (click)="addToCart(item.maTuiXach)" href="javascript:" class="btn btn-default add-to-cart" style ="font-size: 13px;"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                             </div>
 
                         </div>
