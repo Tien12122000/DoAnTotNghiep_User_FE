@@ -99,9 +99,10 @@
                     <tfoot>
                         <tr>
                             <td colspan="6">
-                                <button class="pull-left">
-                                          Tiếp tục mua sắm
+                              <a [routerLink]="['/']"><button class="pull-left">
+                                         Tiếp tục mua sắm
                                       </button>
+                                    </a>
                                 <button class=" pull-right" (click)="updateCartQuanty()">
                                           Cập nhật giỏ hàng
                                       </button>
@@ -125,9 +126,10 @@
                                       {{total()|number}} Đ
                                   </span>
                             </div>
-                            <button id="checkOut">
-                                  <a [routerLink]="['/CheckOut']">Tiến hành thanh toán</a>
+                            <a [routerLink]="['/CheckOut']"><button id="checkOut">
+                                  Tiến hành thanh toán
                               </button>
+                            </a>
                         </div>
                     </div>
                 </div>
