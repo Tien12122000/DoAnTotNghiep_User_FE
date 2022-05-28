@@ -75,8 +75,8 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
             this._api.get('/api/TuiXach/Tui-page/'+ HomeComponent.pageHomeIndex),
           ]).subscribe(res => {
             HomeComponent.list_item = res[0];
-            console.log(HomeComponent.list_item);
-            console.log(HomeComponent.pageHomeIndex);
+            // console.log(HomeComponent.list_item);
+            // console.log(HomeComponent.pageHomeIndex);
             setTimeout(() => {
               this.loadScripts();
             });
@@ -94,7 +94,7 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
           this._api.get('/api/TuiXach/getTuiByCateIdPaginate/'+ HomeComponent.pageHomeIndex+'/'+HeaderComponent.cateid),
         ]).subscribe(res => {
           HomeComponent.list_item = res[0];
-          console.log(HomeComponent.list_item);
+          // console.log(HomeComponent.list_item);
           // console.log(HomeComponent.pageHomeIndex);
           setTimeout(() => {
             this.loadScripts();
@@ -129,8 +129,8 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
             this._api.get('/api/TuiXach/Tui-page/'+ HomeComponent.pageHomeIndex),
           ]).subscribe(res => {
             HomeComponent.list_item = res[0];
-            console.log(HomeComponent.list_item);
-            console.log(HomeComponent.pageHomeIndex);
+            // console.log(HomeComponent.list_item);
+            // console.log(HomeComponent.pageHomeIndex);
             setTimeout(() => {
               this.loadScripts();
             });
@@ -145,8 +145,8 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
           this._api.get('/api/TuiXach/getTuiByCateIdPaginate/'+ HomeComponent.pageHomeIndex+'/'+HeaderComponent.cateid),
         ]).subscribe(res => {
           HomeComponent.list_item = res[0];
-          console.log(HomeComponent.list_item);
-          console.log(HomeComponent.pageHomeIndex);
+          // console.log(HomeComponent.list_item);
+          // console.log(HomeComponent.pageHomeIndex);
           setTimeout(() => {
             this.loadScripts();
           });
@@ -178,7 +178,7 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
         //  this._api.post('/api/item/search',{page: 1, pageSize: 5, item_group_id: null})
         ]).subscribe(res => {
           HomeComponent.list_item = res[0];
-          console.log(HomeComponent.list_item);
+          // console.log(HomeComponent.list_item);
           setTimeout(() => {
             this.loadScripts();
           });
@@ -190,8 +190,8 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
         this._api.get('/api/TuiXach/getTuiByCateIdPaginate/'+ HomeComponent.pageHomeIndex+'/'+HeaderComponent.cateid),
       ]).subscribe(res => {
         HomeComponent.list_item = res[0];
-        console.log(HomeComponent.list_item);
-        console.log(HomeComponent.pageHomeIndex);
+        // console.log(HomeComponent.list_item);
+        // console.log(HomeComponent.pageHomeIndex);
         setTimeout(() => {
           this.loadScripts();
         });
@@ -212,8 +212,8 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
       this._api.get('/api/Cart/Create-Sale-Prod/'+ id),
     ]).subscribe(res => {
       this._cart.addToCart(res[0]);
-      console.log(res[0]);
-      console.log(this._cart.getItems());
+      // console.log(res[0]);
+      // console.log(this._cart.getItems());
       setTimeout(() => {
         this.loadScripts();
       });
