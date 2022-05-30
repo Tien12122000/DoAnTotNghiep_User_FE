@@ -94,6 +94,9 @@ export class CheckOutComponent extends BaseComponent implements OnInit {
       this._cart.clearCart();
       // alert("ok");
       alertifyjs.success('Đặt hàng thành công');
+      setTimeout(() => {
+        window.location.pathname="/";
+      }, 2000);
       }
     else{
       alert("Giỏ hàng trống");

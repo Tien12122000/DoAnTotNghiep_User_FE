@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { combineLatest } from 'rxjs';
 import { BaseComponent } from 'src/app/core/base/base.component';
 import { HomeComponent } from '../home/home.component';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header',
@@ -24,8 +25,17 @@ export class HeaderComponent extends BaseComponent implements OnInit {
     combineLatest([
       this._api.get('/api/LoaiTuiXaches/danhsach'),
     ]).subscribe(res => {
-      this.category=res[0];
-      console.log(this.category);
+      
+        this.category=res[0];
+        console.log(this.category);
+        var categoryText='';
+      setTimeout(() => {
+        this.category.forEach(e => {
+          categoryText+='<li style="cursor: pointer;" (click)="getTuiByCate(cate.maLoaiTuiXach)" id="{{cate.maLoaiTuiXach}}"><a>'+e.tenLoai+'</a></li>';
+        });
+        document.getElementById("categoryList").innerHTML=categoryText;
+      }, 2000);
+      
       setTimeout(() => {
         this.loadScripts();
       });
