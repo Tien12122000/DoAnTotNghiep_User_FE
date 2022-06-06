@@ -3,11 +3,11 @@
         <div class="row">
             <div class="col-md-2 col-sm-2">
                 <div class="logo1">
-                    <h1 style ="margin-top: 24px;font-weight: bold;color: white;font-size: 50px;">Juno</h1>
+                    <h1 style ="margin-top: 11px; font-weight: bold;color: white;font-size: 50px;height: 63px;">Juno</h1>
                 </div>
             </div>
             <div class="col-md-10 col-sm-10">
-                <div class="header_top" style="background: none">
+                <!-- <div class="header_top" style="background: none">
                     <div class="row">
                         <div class="col-md-3" style="float: right">
                             <ul class="usermenu">
@@ -16,7 +16,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="clearfix"></div>
                 <div class="header_bottom">
                     <ul class="option">
@@ -30,7 +30,7 @@
                         </li>
                         <li class="option-cart">
                             <a (click)="CartNavigate()" class="cart-icon">cart <span id="no" class="cart_no">{{getnumberOfItems()}}</span></a>
-                            <ul class="option-cart-item">
+                            <ul *ngIf="getnumberOfItems ()>0" class="option-cart-item">
                                 <div id="change-item-cart">
                                     <li *ngFor="let item of getlistCartItem()">
                                         <div class="cart-item" >

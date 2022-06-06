@@ -54,7 +54,7 @@ export class CartComponent extends BaseComponent implements OnInit {
   total(){
     return this._cart.total();
   }
-  ShowOrderNumber(){
-    return this.Stt++;
+  ShowOrderNumber(stt){
+    return ++stt;
   }
 }

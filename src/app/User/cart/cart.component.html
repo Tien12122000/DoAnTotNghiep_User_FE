@@ -18,6 +18,9 @@
                             <th>
                                 STT
                             </th>
+                            <!-- <th style="width: 10px;">
+                              Mã sản phẩm
+                          </th> -->
                             <th style ="width:150px">
                                 Hình ảnh
                             </th>
@@ -37,19 +40,19 @@
                     </thead>
                     <tbody>
 
-
-                        <tr id="{{item.maSanPham}}" *ngFor="let item of getlistCartItem()">
-                          <!-- <td>
-                            {{item.maSanPham}}
-                        </td> -->
+                        <tr id="{{item.maSanPham}}" *ngFor="let item of getlistCartItem(); let r = index">
                             <td>
-                                {{ShowOrderNumber()}}
+                                {{ShowOrderNumber(r)}}
                             </td>
+                            <!-- <td>
+                              {{item.maSanPham}}
+                            </td> -->
+
                             <td style ="width:150px">
                                 <img src="assets/backend/images/img/{{item.tui.hinhAnh}}" alt="">
                             </td>
                             <td style ="width:200px">
-                                        {{item.tui.tenTuiXach}}
+                                        {{item.tui.tenTuiXach}} - Mã sản phẩm: {{item.maSanPham}}
                             </td>
 
                             <td>
@@ -66,6 +69,7 @@
                                 </span>
                             </td>
                         </tr>
+
                     </tbody>
                     <tfoot>
                         <tr>
@@ -82,6 +86,9 @@
                     </tfoot>
 
                 </table>
+                <div *ngIf="total()<=0" style="position:relative; text-align: center; font-size: 14px;" class="col-12">
+                   <a  [routerLink]="['/']">Không có sản phẩm nào trong giỏ hàng của bạn. Vui lòng thêm sản phẩm vào giỏ hàng!</a>
+                </div>
                 <div class="clearfix">
                 </div>
                 <div class="row">
