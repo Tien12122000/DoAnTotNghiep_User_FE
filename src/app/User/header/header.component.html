@@ -29,8 +29,7 @@
 
                         </li>
                         <li class="option-cart">
-                            <a [routerLink]="['/Cart']" class="cart-icon">cart <span id="no" class="cart_no">{{getnumberOfItems()}}
-</span></a>
+                            <a (click)="CartNavigate()" class="cart-icon">cart <span id="no" class="cart_no">{{getnumberOfItems()}}</span></a>
                             <ul class="option-cart-item">
                                 <div id="change-item-cart">
                                     <li *ngFor="let item of getlistCartItem()">
@@ -73,8 +72,9 @@
                                 <div class="dropdown-menu mega-menu" style="width: 150px;">
                                     <div class="row">
                                         <div id="menu_category" class="col-md-6 col-sm-6">
-                                            <ul class="mega-menu-links" id="categoryList">
-                                                <!-- <li style="cursor: pointer;" (click)="getTuiByCate(cate.maLoaiTuiXach)" id="{{cate.maLoaiTuiXach}}" *ngFor="let cate of category"><a>{{cate.tenLoai}}</a></li> -->
+                                            <ul class="mega-menu-links">
+                                              <!-- <ul class="mega-menu-links" id="categoryList"> -->
+                                                <li style="cursor: pointer;" (click)="getTuiByCate(cate.maLoaiTuiXach)" id="{{cate.maLoaiTuiXach}}" *ngFor="let cate of category"><a>{{cate.tenLoai}}</a></li>
                                             </ul>
                                         </div>
 

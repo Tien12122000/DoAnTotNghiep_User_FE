@@ -4,6 +4,7 @@ import { combineLatest } from 'rxjs';
 import { BaseComponent } from 'src/app/core/base/base.component';
 import { HomeComponent } from '../home/home.component';
 import * as $ from 'jquery';
+import alertifyjs from 'alertifyjs';
 
 @Component({
   selector: 'app-header',
@@ -25,17 +26,17 @@ export class HeaderComponent extends BaseComponent implements OnInit {
     combineLatest([
       this._api.get('/api/LoaiTuiXaches/danhsach'),
     ]).subscribe(res => {
-      
+
         this.category=res[0];
         console.log(this.category);
         var categoryText='';
       setTimeout(() => {
         this.category.forEach(e => {
-          categoryText+='<li style="cursor: pointer;" (click)="getTuiByCate(cate.maLoaiTuiXach)" id="{{cate.maLoaiTuiXach}}"><a>'+e.tenLoai+'</a></li>';
+          // categoryText+='<li style="cursor: pointer;" (click)="getTuiByCate('+ e.maLoaiTuiXach+')" id="'+e.maLoaiTuiXach+'"><a>'+e.tenLoai+'</a></li>';
         });
         document.getElementById("categoryList").innerHTML=categoryText;
       }, 2000);
-      
+
       setTimeout(() => {
         this.loadScripts();
       });
@@ -99,5 +100,16 @@ export class HeaderComponent extends BaseComponent implements OnInit {
 
   deleteItem (id){
     this._cart.deleteItem(id);
+  }
+  CartNavigate(){
+   var itemNumber=this._cart.numberOfItems();
+   if(itemNumber>0){
+     window.location.pathname="/Cart";
+   }
+   else {
+
+
+    alertifyjs.success('Giỏ hàng trống');
+   }
   }
 }

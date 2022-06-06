@@ -2,6 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { BaseComponent } from 'src/app/core/base/base.component';
+import alertifyjs from 'alertifyjs';
 
 @Component({
   selector: 'app-product-deltail',
@@ -29,5 +30,19 @@ export class ProductDeltailComponent extends BaseComponent implements OnInit {
       });
     }, err => { throw err; });
   }
-
+  addToCart(id){
+    combineLatest([
+      this._api.get('/api/Cart/Create-Sale-Prod/'+ id),
+    ]).subscribe(res => {
+      this._cart.addToCart(res[0]);
+      // console.log(res[0]);
+      // console.log(this._cart.getItems());
+      setTimeout(() => {
+        this.loadScripts();
+      });
+    }, err => { throw err; });
+    this._cart.total();
+    alertifyjs.success('Đã thêm giỏ hàng');
+    // HeaderComponent.arr.unshift(1);
+  }
 }

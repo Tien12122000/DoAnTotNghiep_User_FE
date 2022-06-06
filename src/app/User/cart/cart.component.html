@@ -12,8 +12,11 @@
                 <table class="shop-table">
                     <thead>
                         <tr>
+                          <!-- <th style ="width:0px">
+                            STT
+                        </th> -->
                             <th>
-                                Mã
+                                STT
                             </th>
                             <th style ="width:150px">
                                 Hình ảnh
@@ -36,8 +39,11 @@
 
 
                         <tr id="{{item.maSanPham}}" *ngFor="let item of getlistCartItem()">
+                          <!-- <td>
+                            {{item.maSanPham}}
+                        </td> -->
                             <td>
-                                {{item.maSanPham}}
+                                {{ShowOrderNumber()}}
                             </td>
                             <td style ="width:150px">
                                 <img src="assets/backend/images/img/{{item.tui.hinhAnh}}" alt="">
@@ -47,7 +53,7 @@
                             </td>
 
                             <td>
-                                <input value="{{item.soluong}}" style="width: 70px" min="0" type="number" name="" data-id="{{item.maSanPham}}">
+                                <input value="{{item.soluong}}" style="width: 70px" min="1" type="number" name="" data-id="{{item.maSanPham}}">
                             </td>
                             <td>
                                 <p style ="font-size: 13px; color: red">

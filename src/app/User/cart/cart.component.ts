@@ -13,10 +13,11 @@ export class CartComponent extends BaseComponent implements OnInit {
   constructor(private injector:Injector, private ngZone: NgZone) {
     super(injector);
   }
-  Stt=0;
+  Stt:any;
   static listCartItem:any;
   ngOnInit(): void {
     this.getlistCartItem ();
+    this.Stt=0;
     // console.log(this._cart.getItems());
   }
   getlistCartItem (){
@@ -52,5 +53,8 @@ export class CartComponent extends BaseComponent implements OnInit {
   }
   total(){
     return this._cart.total();
+  }
+  ShowOrderNumber(){
+    return this.Stt++;
   }
 }

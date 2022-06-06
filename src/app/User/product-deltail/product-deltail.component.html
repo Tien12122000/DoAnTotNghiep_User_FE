@@ -8,7 +8,7 @@
                             <div style="height:311px;width:328px;" class="zoomWrapper"><img id="zoom_03" style="height:311px;width:328px;" src="assets/backend/images/img/{{tuixach.hinhAnh}}" data-zoom-image="http://localhost/blog/public/backend/images/img/jtPONJ4h.jpg" alt="">
                             </div>
                         </div>
-                        <div class="thum-image">
+                        <!-- <div class="thum-image">
                             <div class="caroufredsel_wrapper" style="display: block; text-align: start; float: none; position: relative; inset: auto; z-index: auto; width: 240px; height: 55px; margin: 0px; overflow: hidden;">
                                 <ul id="gallery_01" class="prev-thum" style="text-align: left; float: none; position: absolute; inset: 0px auto auto 0px; margin: 0px; width: 840px; height: 55px;">
                                     <li style="width: 60px;">
@@ -46,7 +46,7 @@
                                 <i class="fa fa-chevron-right">
                               </i>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="products-description">
                         <h5 class="name">
@@ -67,7 +67,7 @@
                         <div class="wided">
 
                             <div class="button_group">
-                                <a onclick="Addcart(1)" href="javascript:">
+                                <a (click)="addToCart(tuixach.maTuiXach)" href="javascript:">
                                     <button class="button">
                                       Thêm giỏ hàng
                                   </button>
@@ -145,10 +145,10 @@
                 </div>
                 <div class="clearfix">
                 </div>
-                
+
                 <div class="clearfix">
                 </div>
-               
+
                 <div class="clearfix">
                 </div>
                 <div class="clearfix">

@@ -199,6 +199,7 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
     }
   }
   get staticUrlArray() {
+    console.log(HomeComponent.list_item);
     return HomeComponent.list_item;
   }
   get staticIndex() {
@@ -220,6 +221,6 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
     }, err => { throw err; });
     this._cart.total();
     alertifyjs.success('Đã thêm giỏ hàng');
-    HeaderComponent.arr.unshift(1);
+    // HeaderComponent.arr.unshift(1);
   }
 }
