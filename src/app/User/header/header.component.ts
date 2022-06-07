@@ -112,4 +112,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
     alertifyjs.success('Giỏ hàng trống');
    }
   }
+  BackToHomePage(){
+    window.location.pathname="/";
+  }
 }
