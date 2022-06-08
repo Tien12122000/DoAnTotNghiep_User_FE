@@ -15,6 +15,7 @@ import { ProductDeltailComponent } from '../product-deltail/product-deltail.comp
     CommonModule,
     RouterModule.forChild([
       {path:'',component:HomeComponent},
+      {path:'category/:id',component:HomeComponent},
       {path:'detail/:id',component:ProductDeltailComponent},
       {path:'CheckOut', loadChildren:()=>import('../check-out-module/check-out-module.module').then(m=>m.CheckOutModuleModule)}
     ])

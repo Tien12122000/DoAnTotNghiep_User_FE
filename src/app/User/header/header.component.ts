@@ -5,6 +5,7 @@ import { BaseComponent } from 'src/app/core/base/base.component';
 import { HomeComponent } from '../home/home.component';
 import * as $ from 'jquery';
 import alertifyjs from 'alertifyjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -23,20 +24,12 @@ export class HeaderComponent extends BaseComponent implements OnInit {
     });
     let local_storage = JSON.parse(localStorage.getItem('cart'));
     // console.log(local_storage);
+
     combineLatest([
       this._api.get('/api/LoaiTuiXaches/danhsach'),
     ]).subscribe(res => {
 
         this.category=res[0];
-        console.log(this.category);
-        var categoryText='';
-      setTimeout(() => {
-        this.category.forEach(e => {
-          // categoryText+='<li style="cursor: pointer;" (click)="getTuiByCate('+ e.maLoaiTuiXach+')" id="'+e.maLoaiTuiXach+'"><a>'+e.tenLoai+'</a></li>';
-        });
-        document.getElementById("categoryList").innerHTML=categoryText;
-      }, 2000);
-
       setTimeout(() => {
         this.loadScripts();
       });
@@ -68,20 +61,22 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   }
   static cateid;
   getTuiByCate(id){
-    HomeComponent.state=2;
-    HeaderComponent.cateid=id;
-    combineLatest([
-      this._api.get('/api/TuiXach/getTuiByCateIdPaginate/'+ '1'+'/'+id),
-      this._api.get('/api/TuiXach/getTuiByCateId_all/'+id),
-    ]).subscribe(res => {
-      HomeComponent.list_item = res[0];
-      HomeComponent.listTotalHomeRecord=res[1];
-      HomeComponent.pageHomeIndex=1;
-      // console.log(HomeComponent.list_item);
-      setTimeout(() => {
-        this.loadScripts();
-      });
-    }, err => { throw err; });
+
+    window.location.pathname="/category/"+id;
+    // HomeComponent.state=2;
+    // HeaderComponent.cateid=id;
+    // combineLatest([
+    //   this._api.get('/api/TuiXach/getTuiByCateIdPaginate/'+ '1'+'/'+id),
+    //   this._api.get('/api/TuiXach/getTuiByCateId_all/'+id),
+    // ]).subscribe(res => {
+    //   HomeComponent.list_item = res[0];
+    //   HomeComponent.listTotalHomeRecord=res[1];
+    //   HomeComponent.pageHomeIndex=1;
+    //   // console.log(HomeComponent.list_item);
+    //   setTimeout(() => {
+    //     this.loadScripts();
+    //   });
+    // }, err => { throw err; });
     // alert("ok");
   }
   static arr=[];

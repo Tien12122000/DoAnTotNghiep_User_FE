@@ -74,7 +74,7 @@
                                         <div id="menu_category" class="col-md-6 col-sm-6">
                                             <ul class="mega-menu-links">
                                               <!-- <ul class="mega-menu-links" id="categoryList"> -->
-                                                <li style="cursor: pointer;" (click)="getTuiByCate(cate.maLoaiTuiXach)" id="{{cate.maLoaiTuiXach}}" *ngFor="let cate of category"><a>{{cate.tenLoai}}</a></li>
+                                                <li style="cursor: pointer;"  id="{{cate.maLoaiTuiXach}}" *ngFor="let cate of category"><a (click)="getTuiByCate(cate.maLoaiTuiXach)">{{cate.tenLoai}}</a></li>
                                             </ul>
                                         </div>
 

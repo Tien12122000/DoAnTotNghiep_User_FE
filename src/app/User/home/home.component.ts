@@ -1,6 +1,6 @@
 import { ifStmt } from '@angular/compiler/src/output/output_ast';
 import { AfterViewInit, Component, Injector, OnInit, Renderer2 } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { BaseComponent } from 'src/app/core/base/base.component';
 import { HeaderComponent } from '../header/header.component';
@@ -15,7 +15,7 @@ import alertifyjs from 'alertifyjs';
 })
 export class HomeComponent extends BaseComponent implements OnInit, AfterViewInit {
 
-  constructor(private render2: Renderer2,private injector: Injector, private route:Router) {
+  constructor(private render2: Renderer2,private injector: Injector, private route:Router,private router:ActivatedRoute) {
 
     super(injector);
   }
@@ -28,6 +28,26 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
   static pageHomeIndex=1;
   static listTotalHomeRecord:any;
   ngOnInit(): void {
+    var value:any;
+    this.router.params.subscribe(res=>{
+      value=res['id'];
+    });
+
+    console.log(value);
+    if(value)
+    {
+      HomeComponent.list_item=[];
+      combineLatest([
+        this._api.get('/api/TuiXach/getTuiByCateIdPaginate/'+ '1'+'/'+value),
+      ]).subscribe(res => {
+        HomeComponent.list_item = res[0];
+
+        setTimeout(() => {
+          this.loadScripts();
+        });
+      }, err => { throw err; });
+    }
+    else
     combineLatest([
       this._api.get('/api/TuiXach/Tui-page/'+ HomeComponent.pageHomeIndex),
       this._api.get('/api/TuiXach/Get-Row-total-tui-records'),
