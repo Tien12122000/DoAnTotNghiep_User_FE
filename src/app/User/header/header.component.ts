@@ -29,8 +29,8 @@ export class HeaderComponent extends BaseComponent implements OnInit {
       this._api.get('/api/LoaiTuiXaches/danhsach'),
     ]).subscribe(res => {
 
-        this.category=res[0];
       setTimeout(() => {
+        this.category=res[0];
         this.loadScripts();
       });
     }, err => { throw err; });

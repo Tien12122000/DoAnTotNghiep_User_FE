@@ -237,10 +237,10 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
       // console.log(this._cart.getItems());
       setTimeout(() => {
         this.loadScripts();
+        alertifyjs.success('Đã thêm giỏ hàng');
       });
     }, err => { throw err; });
     this._cart.total();
-    alertifyjs.success('Đã thêm giỏ hàng');
     // HeaderComponent.arr.unshift(1);
   }
 }
