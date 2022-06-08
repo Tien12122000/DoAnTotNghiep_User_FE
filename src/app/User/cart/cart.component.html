@@ -1,5 +1,32 @@
-<div class="container_fullwidth">
-    <div class="container shopping-cart">
+
+<div class="container_fullwidth" style ="height: 70vh"  *ngIf="total() <= 0">
+    <div class="container shopping-cart" >
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="title">
+                    Giỏ hàng
+                </h3>
+                <div class="clearfix">
+                </div>
+                <div style="position:relative; text-align: center; font-size: 14px;" class="col-12">
+                   <a  [routerLink]="['/']">Không có sản phẩm nào trong giỏ hàng của bạn. Vui lòng thêm sản phẩm vào giỏ hàng!</a>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="container_fullwidth" *ngIf="total() > 0">
+    <div class="container shopping-cart" >
 
         <div class="row">
             <div class="col-md-12">
@@ -9,7 +36,7 @@
                 <div class="clearfix">
                 </div>
 
-                <table class="shop-table">
+                <table class="shop-table" >
                     <thead>
                         <tr>
                           <!-- <th style ="width:0px">
@@ -86,12 +113,12 @@
                     </tfoot>
 
                 </table>
-                <div *ngIf="total()<=0" style="position:relative; text-align: center; font-size: 14px;" class="col-12">
+                <!-- <div style="position:relative; text-align: center; font-size: 14px;" class="col-12">
                    <a  [routerLink]="['/']">Không có sản phẩm nào trong giỏ hàng của bạn. Vui lòng thêm sản phẩm vào giỏ hàng!</a>
-                </div>
+                </div> -->
                 <div class="clearfix">
                 </div>
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-4 col-sm-6">
                         <div class="shippingbox">
                             <div class="subtotal">
@@ -117,4 +144,5 @@
         <div class="clearfix">
         </div>
     </div>
+
 </div>
