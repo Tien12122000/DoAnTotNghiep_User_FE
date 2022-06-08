@@ -30,6 +30,9 @@ export class CartComponent extends BaseComponent implements OnInit {
     let lisCartItem = [];
             $("table tbody tr td").each(function() {
                 $(this).find('input').each(function() {
+                  if($(this).val()<=0){
+                    $(this).val(1);
+                  }
                     var element = {
                         id: $(this).attr('id'),
                         quantity: $(this).val()
@@ -57,4 +60,12 @@ export class CartComponent extends BaseComponent implements OnInit {
   ShowOrderNumber(stt){
     return ++stt;
   }
+  // KeyUp(id){
+  //   var getValue=$("#"+id+" input").val();
+  //   if(getValue<=0){
+  //     $("#"+id+" imput").val(1);
+  //     // alert('msg');
+  //   }
+  //   // alert(id);
+  // }
 }

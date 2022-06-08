@@ -40,24 +40,44 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   category:any;
   formG:FormGroup;
   search(getData){
-    HomeComponent.state=1;
-    HeaderComponent.value=getData.Seacrh;
-    combineLatest([
-      this._api.get('/api/TuiXach/Search-Tui-Paginate/'+ '1'+'/'+HeaderComponent.value),
-      this._api.get('/api/TuiXach/Search-Record-count/'+HeaderComponent.value),
-    ]).subscribe(res => {
-      HomeComponent.list_item = res[0];
-      HomeComponent.list=res[0];
-      HomeComponent.listTotalHomeRecord=res[1];
-      HomeComponent.pageHomeIndex=1;
-      // console.log(HomeComponent.list_item);
-      setTimeout(() => {
-        this.loadScripts();
+    if(getData)
+    {
+        HomeComponent.state=1;
+        HeaderComponent.value=getData.Seacrh;
+        combineLatest([
+        this._api.get('/api/TuiXach/Search-Tui-Paginate/'+ '1'+'/'+HeaderComponent.value),
+        this._api.get('/api/TuiXach/Search-Record-count/'+HeaderComponent.value),
+        ]).subscribe(res => {
+        HomeComponent.list_item = res[0];
+        HomeComponent.list=res[0];
+        HomeComponent.listTotalHomeRecord=res[1];
+        if(HomeComponent.listTotalHomeRecord=res[1]<=0 ){
+          HomeComponent.listTotalHomeRecord=res[1]=1;
+        }
+        HomeComponent.pageHomeIndex=1;
+        // console.log(HomeComponent.list_item);
+        setTimeout(() => {
+          this.loadScripts();
+        });
+      }, err => { throw err; });
+      this.formG= new FormGroup({
+        Seacrh:new FormControl('',Validators.maxLength(100))
       });
-    }, err => { throw err; });
-    this.formG= new FormGroup({
-      Seacrh:new FormControl('',Validators.maxLength(100))
-    });
+    }
+    else if(!getData){
+
+      HomeComponent.pageHomeIndex=1;
+      combineLatest([
+        this._api.get('/api/TuiXach/Tui-page/'+ HomeComponent.pageHomeIndex),
+        this._api.get('/api/TuiXach/Search-Record-count/'+HeaderComponent.value),
+      ]).subscribe(res => {
+        HomeComponent.list_item = res[0];
+        HomeComponent.listTotalHomeRecord=res[1];
+        setTimeout(() => {
+          this.loadScripts();
+        });
+      }, err => { throw err; });
+    }
   }
   static cateid;
   getTuiByCate(id){

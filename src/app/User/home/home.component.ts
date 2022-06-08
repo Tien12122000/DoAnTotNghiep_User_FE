@@ -39,9 +39,11 @@ export class HomeComponent extends BaseComponent implements OnInit, AfterViewIni
       HomeComponent.list_item=[];
       combineLatest([
         this._api.get('/api/TuiXach/getTuiByCateIdPaginate/'+ '1'+'/'+value),
+          this._api.get('/api/TuiXach/getTuiByCateId_all/'+value),
       ]).subscribe(res => {
         HomeComponent.list_item = res[0];
 
+        HomeComponent.listTotalHomeRecord=res[1];
         setTimeout(() => {
           this.loadScripts();
         });
