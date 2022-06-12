@@ -83,21 +83,6 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   getTuiByCate(id){
 
     window.location.pathname="/category/"+id;
-    // HomeComponent.state=2;
-    // HeaderComponent.cateid=id;
-    // combineLatest([
-    //   this._api.get('/api/TuiXach/getTuiByCateIdPaginate/'+ '1'+'/'+id),
-    //   this._api.get('/api/TuiXach/getTuiByCateId_all/'+id),
-    // ]).subscribe(res => {
-    //   HomeComponent.list_item = res[0];
-    //   HomeComponent.listTotalHomeRecord=res[1];
-    //   HomeComponent.pageHomeIndex=1;
-    //   // console.log(HomeComponent.list_item);
-    //   setTimeout(() => {
-    //     this.loadScripts();
-    //   });
-    // }, err => { throw err; });
-    // alert("ok");
   }
   static arr=[];
   getArrcartItem (){
