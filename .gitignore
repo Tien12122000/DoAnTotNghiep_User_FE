@@ -46,3 +46,12 @@ Thumbs.db
 /.vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 .vs/frontEndAngularApi/v16/.suo
+src/assets/backend/images/img/80905975-juno.png
+src/app/User/contact/contact.component.css
+src/app/User/contact/contact.component.html
+src/app/User/contact/contact.component.spec.ts
+src/app/User/contact/contact.component.ts
+src/app/User/news/news.component.css
+src/app/User/news/news.component.html
+src/app/User/news/news.component.spec.ts
+src/app/User/news/news.component.ts
