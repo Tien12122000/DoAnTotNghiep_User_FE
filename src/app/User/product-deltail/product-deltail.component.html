@@ -62,15 +62,15 @@
                     <div class="special-item" *ngFor="let item of relatedProducts">
                         <div class="product-image">
                             <a href="#">
-                                <img src="assets/backend/images/img/{{tuixach.hinhAnh}}" alt="">
+                                <img src="assets/backend/images/img/{{item.hinhAnh}}" alt="">
                             </a>
                         </div>
                         <div class="product-info">
                             <p>
-                              {{tuixach.tenTuiXach}}
+                              {{item.tenTuiXach}}
                             </p>
                             <h5 class="price">
-                              {{tuixach.gia|number}}Đ
+                              {{item.gia|number}}Đ
                             </h5>
                         </div>
                     </div>
