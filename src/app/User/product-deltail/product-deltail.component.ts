@@ -15,6 +15,7 @@ export class ProductDeltailComponent extends BaseComponent implements OnInit {
     super(inject);
   }
   tuixach:any;
+  relatedProducts:any;
   ngOnInit(): void {
     var value:any;
     this.router.params.subscribe(res=>{
@@ -22,8 +23,10 @@ export class ProductDeltailComponent extends BaseComponent implements OnInit {
     })
     combineLatest([
       this._api.get('/api/TuiXach/Get-Tui-by-ID/'+value),
+      this._api.get('/api/TuiXach/Get-related-products/'+value)
     ]).subscribe(res => {
       this.tuixach = res[0];
+      this.relatedProducts = res[1];
       console.log(this.tuixach);
       setTimeout(() => {
         this.loadScripts();
