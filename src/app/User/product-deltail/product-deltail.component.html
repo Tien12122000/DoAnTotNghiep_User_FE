@@ -57,24 +57,24 @@
                     <h4 class="title">
                         <strong>
                           Sản Phẩm
-                      </strong> đặc biệt
+                      </strong> liên quan
                     </h4>
-                    <div class="special-item">
+                    <div class="special-item" *ngFor="let item of relatedProducts">
                         <div class="product-image">
                             <a href="#">
-                                <img src="assets/User/images/products/thum/fc7605869e745f2a06655.jpg" alt="">
+                                <img src="assets/backend/images/img/{{tuixach.hinhAnh}}" alt="">
                             </a>
                         </div>
                         <div class="product-info">
                             <p>
-                                Licoln Corner Unit
+                              {{tuixach.tenTuiXach}}
                             </p>
                             <h5 class="price">
-                                300,000Đ
+                              {{tuixach.gia|number}}Đ
                             </h5>
                         </div>
                     </div>
-                    <div class="special-item">
+                    <!-- <div class="special-item">
                         <div class="product-image">
                             <a href="#">
                                 <img src="assets/User/images/products/thum/b1f5c1055af79ba9c2e62.jpg" alt="">
@@ -103,7 +103,7 @@
                                 300,000Đ
                             </h5>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="clearfix">
                 </div>

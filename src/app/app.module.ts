@@ -11,8 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from './User/cart/cart.component';
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 import { BillComponentComponent } from './User/bill-component/bill-component.component';
-import { ContactComponent } from './User/contact/contact.component';
-import { NewsComponent } from './User/news/news.component';
+// import { ContactComponent } from './User/contact/contact.component';
+// import { NewsComponent } from './User/news/news.component';
 // import { ProductDeltailComponent } from './User/product-deltail/product-deltail.component';
 
 
@@ -24,8 +24,8 @@ import { NewsComponent } from './User/news/news.component';
     BaseComponent,
     CartComponent,
     BillComponentComponent,
-    ContactComponent,
-    NewsComponent,
+    // ContactComponent,
+    // NewsComponent,
     // ProductDeltailComponent
   ],
   imports: [

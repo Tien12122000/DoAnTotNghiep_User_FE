@@ -23,11 +23,16 @@ export class ProductDeltailComponent extends BaseComponent implements OnInit {
     })
     combineLatest([
       this._api.get('/api/TuiXach/Get-Tui-by-ID/'+value),
-      this._api.get('/api/TuiXach/Get-related-products/'+value)
     ]).subscribe(res => {
       this.tuixach = res[0];
-      this.relatedProducts = res[1];
-      console.log(this.tuixach);
+      // this.relatedProducts = res[1];
+      // console.log(this.relatedProducts);
+      combineLatest([
+        this._api.get('/api/TuiXach/Get-related-products/'+ this.tuixach.maLoaiTuiXach)
+      ]).subscribe(result=>{
+        this.relatedProducts = result[0];
+        console.log(this.relatedProducts);
+      });
       setTimeout(() => {
         this.loadScripts();
       });
