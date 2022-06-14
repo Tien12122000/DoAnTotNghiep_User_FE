@@ -15,6 +15,8 @@ import { ProductDeltailComponent } from '../product-deltail/product-deltail.comp
   ],
   imports: [
     CommonModule,
+    // ContactComponent,
+    // NewsComponent,
     RouterModule.forChild([
       {path:'',component:HomeComponent},
       {path:'category/:id',component:HomeComponent},
