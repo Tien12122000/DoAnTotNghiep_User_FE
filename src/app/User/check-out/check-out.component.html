@@ -131,6 +131,9 @@
                                                     <div class="alert-danger danger" *ngIf="(formgroup.controls.SoDienThoai?.touched)&&(formgroup.controls.SoDienThoai?.errors?.required)">
                                                         Số điện thoại không được để trống
                                                     </div>
+                                                    <!-- <div class="alert-danger danger" *ngIf="(formgroup.controls.SoDienThoai?.pattern)&&(formgroup.controls.SoDienThoai?.errors?.required)">
+                                                      Số điện thoại không đúng định dạng
+                                                  </div> -->
                                                     <!-- <div class="alert-danger danger" *ngIf="(formgroup.controls.SoDienThoai?.errors?.pattern)">
                                                         Số điện thoại không đúng định dạng
                                                     </div> -->
@@ -260,7 +263,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="clearfix">
                 </div>
             </div>
