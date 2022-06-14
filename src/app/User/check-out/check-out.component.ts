@@ -58,7 +58,7 @@ export class CheckOutComponent extends BaseComponent implements OnInit {
         email:formgroup.controls.EmailKhachHang.value,
         phone:formgroup.controls.SoDienThoai.value,
         address:formgroup.controls.DiaChiKhachHang.value,
-        pass:formgroup.controls.DiaChiKhachHang.value,
+        pass:formgroup.controls.pass.value,
         note:formgroup.controls.ghichu.value,
         tongtien:this._cart.total(),
         tongsoluong:this._cart.numberOfItems(),
